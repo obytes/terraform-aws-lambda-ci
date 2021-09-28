@@ -1,0 +1,24 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-version:
+      docker: 19
+
+  pre_build:
+    commands:
+      - SOURCE_VERSION=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION)
+      - pip3 install aws-lambda-ci
+
+  build:
+    commands:
+      - |
+        aws-lambda-ci \
+        --source-version "$SOURCE_VERSION" \
+        --function-name "$FUNCTION_NAME" \
+        --function-runtime "$FUNCTION_RUNTIME" \
+        --function-alias-name "$FUNCTION_ALIAS_NAME" \
+        --function-layer-name "$FUNCTION_NAME-deps" \
+        --app-s3-bucket "$APP_S3_BUCKET" \
+        --app-src-path "$APP_SRC_PATH" \
+        --app-packages-descriptor-path "$APP_PACKAGES_DESCRIPTOR_PATH"
