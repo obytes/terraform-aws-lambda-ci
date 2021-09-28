@@ -1,6 +1,6 @@
 # Terraform AWS Lambda CI
 
-AWS Lambda CI with 
+AWS Lambda CI with Codebuild/Codepipeline
 
 This module depends on:
 
