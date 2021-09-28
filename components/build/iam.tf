@@ -63,6 +63,7 @@ data "aws_iam_policy_document" "policy" {
       "lambda:UpdateFunctionCode",
       "lambda:PublishVersion",
       "lambda:UpdateAlias",
+      "lambda:GetFunction",
     ]
 
     resources = [
@@ -72,6 +73,7 @@ data "aws_iam_policy_document" "policy" {
 
   statement {
     actions = [
+      "Lambda:ListLayerVersions",
       "lambda:PublishLayerVersion",
     ]
     resources = [
