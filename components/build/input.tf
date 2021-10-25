@@ -7,7 +7,7 @@
 variable "prefix" {}
 
 variable "common_tags" {
-  type = "map"
+  type = map(string)
 }
 
 # S3 Buckets
