@@ -71,4 +71,7 @@ resource "aws_codebuild_project" "default" {
   }
 
   tags = local.common_tags
+
+  # To prevent missing permissions during first build
+  depends_on = [aws_iam_role_policy.policy]
 }
