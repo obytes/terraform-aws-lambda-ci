@@ -113,3 +113,9 @@ data "aws_iam_policy_document" "policy" {
     effect = "Allow"
   }
 }
+
+resource "time_sleep" "wait_30_seconds" {
+  depends_on = [aws_iam_role_policy.policy]
+
+  create_duration = "30s"
+}
