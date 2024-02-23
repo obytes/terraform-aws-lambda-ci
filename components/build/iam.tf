@@ -68,7 +68,7 @@ data "aws_iam_policy_document" "policy" {
 
     resources = [
       var.lambda.arn,
-      var.lambda.alias,
+      var.lambda.alias_arn,
     ]
   }
 
