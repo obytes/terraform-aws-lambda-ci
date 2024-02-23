@@ -95,7 +95,6 @@ data "aws_iam_policy_document" "policy" {
       "logs:CreateLogGroup",
       "logs:CreateLogStream",
       "logs:PutLogEvents",
-      "iam:PassRole",
     ]
 
     resources = ["*"]
