@@ -23,10 +23,11 @@ variable "s3_artifacts" {
 # ------
 variable "lambda" {
   type = object({
-    arn     = string
-    name    = string
-    alias   = string
-    runtime = string
+    arn       = string
+    alias_arn = string
+    name      = string
+    alias     = string
+    runtime   = string
   })
 }
 
