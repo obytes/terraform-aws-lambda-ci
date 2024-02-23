@@ -35,7 +35,6 @@ data "aws_iam_policy_document" "policy" {
       "autoscaling:*",
       "cloudwatch:*",
       "codebuild:*",
-      "iam:PassRole",
     ]
 
     resources = ["*"]
